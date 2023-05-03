@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ProductsPage from "./pages/Products";
+import RootLayout from "./pages/Root";
 
 /*
   Adding routing to our application requires:
@@ -21,9 +22,24 @@ import ProductsPage from "./pages/Products";
 // Input: Array of route definition objects where each object
 //        represents one route
 // 1) define routes
+/*
+  To have a common features, such as a navigation bar, be displayed on all pages,
+  we can create a wrapper component and create a route definition with a list of
+  wrapped pages passed to the 'children' property' of the route definition.
+  
+  Having such a root route is completely standard/normal when using react-router.
+  This allows is to have different root routes with a totally different layout
+  and different children.
+*/
 const routeDefinitions = [
-  { path: "/", element: <HomePage /> },
-  { path: "/products", element: <ProductsPage /> },
+  {
+    path: "/",
+    element: <RootLayout />, // acts as a parent route and wrapper for children
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/products", element: <ProductsPage /> },
+    ],
+  },
 ];
 
 /*
