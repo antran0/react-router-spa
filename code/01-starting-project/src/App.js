@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/Home";
+import ProductsPage from "./pages/Products";
 
 /*
   Adding routing to our application requires:
@@ -14,9 +15,14 @@ import HomePage from "./pages/Home";
 
 // Input: Array of route definition objects where each object
 //        represents one route
-const router = createBrowserRouter([{ path: "/", element: <HomePage /> }]);
+// 1) define routes
+const router = createBrowserRouter([
+  { path: "/", element: <HomePage /> },
+  { path: "/products", element: <ProductsPage /> },
+]);
 
 function App() {
+  // 2) activate router
   return <RouterProvider router={router} />;
 }
 
