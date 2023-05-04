@@ -9,7 +9,7 @@ const MainNavigation = () => {
         <ul className={classes.list}>
           <li>
             <NavLink
-              to="/"
+              to=""
               // In the NavLink component, the className prop does not accept
               // a string as usual, but a function that returns a string.
               // An object {isActive, isPending} is automatically passed as
@@ -28,7 +28,7 @@ const MainNavigation = () => {
           </li>
           <li>
             <NavLink
-              to="/products"
+              to="products"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }

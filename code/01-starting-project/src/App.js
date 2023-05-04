@@ -39,8 +39,8 @@ const routeDefinitions = [
     element: <RootLayout />, // acts as a parent route and wrapper for children
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/products", element: <ProductsPage /> },
+      { path: "", element: <HomePage /> },
+      { path: "products", element: <ProductsPage /> },
       // The colon signals to React Router DOM that this part of the path is dynamic.
       // This means every path of the form /products/... will route to the
       // ProductDetailPage component.
@@ -55,7 +55,7 @@ const routeDefinitions = [
       // We can also continue to specify paths like normal after the dynamic portion
       // of the url as such:
       //    our-site.com/:productId/sub-path/
-      { path: "/products/:productId", element: <ProductDetailPage /> },
+      { path: "products/:productId", element: <ProductDetailPage /> },
     ],
   },
 ];

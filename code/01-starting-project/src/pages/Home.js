@@ -5,7 +5,7 @@ const HomePage = (props) => {
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    navigate("/products");
+    navigate("products");
   };
 
   return (
@@ -22,7 +22,7 @@ const HomePage = (props) => {
           Equivalent to:
             <a href="/products">the list of products</a>
          */}
-        Go to <Link to="/products">the list of products</Link>.
+        Go to <Link to="products">the list of products</Link>.
       </p>
       <button type="button" onClick={clickHandler}>
         Navigate to Products
