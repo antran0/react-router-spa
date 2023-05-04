@@ -11,6 +11,10 @@
   gap: 1rem;
 }
 
+/*
+  Note: we use the Link component provided by react-router-dom but still target
+  the <a> tag because Link renders a regular anchor element.
+ */
 .list a {
   text-decoration: none;
   color: var(--color-primary-400);
