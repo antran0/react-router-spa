@@ -5,6 +5,7 @@ import EventDetailPage from "./pages/EventDetail";
 import NewEventPage from "./pages/NewEvent";
 import EditEventPage from "./pages/EditEvent";
 import RootLayout from "./pages/Root";
+import EventLayout from "./pages/EventLayout";
 
 // Challenge / Exercise
 
@@ -36,6 +37,7 @@ const routeDefinitions = [
       { index: true, element: <HomePage /> },
       {
         path: "events",
+        element: <EventLayout />,
         children: [
           { index: true, element: <EventsPage /> },
           { path: "new", element: <NewEventPage /> },
