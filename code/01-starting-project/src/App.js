@@ -8,6 +8,7 @@ import HomePage from "./pages/Home";
 import ProductsPage from "./pages/Products";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
+import ProductDetailPage from "./pages/ProductDetail";
 
 /*
   Adding routing to our application requires:
@@ -40,6 +41,21 @@ const routeDefinitions = [
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/products", element: <ProductsPage /> },
+      // The colon signals to React Router DOM that this part of the path is dynamic.
+      // This means every path of the form /products/... will route to the
+      // ProductDetailPage component.
+      //  Example:
+      //    our-site.com/products/a           params.productId has the value "a"
+      //    our-site.com/products/b           params.productId has the value "b"
+      //    our-site.com/products/whatever    params.productId has the value "whatever"
+      //  all load the ProductDetailPage component but with different paths shown in
+      //  the address bar.
+      // The value encoded in the url can be access using the useParams hook within
+      // the ProductDetailPage component.
+      // We can also continue to specify paths like normal after the dynamic portion
+      // of the url as such:
+      //    our-site.com/:productId/sub-path/
+      { path: "/products/:productId", element: <ProductDetailPage /> },
     ],
   },
 ];
