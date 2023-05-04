@@ -39,7 +39,11 @@ const routeDefinitions = [
     element: <RootLayout />, // acts as a parent route and wrapper for children
     errorElement: <ErrorPage />,
     children: [
-      { path: "", element: <HomePage /> },
+      // The index property turns the route into an index route, which is the
+      // default route that should be displayed if the parent route's path is
+      // currently active.
+      // "index: true" is the same as setting path: "" in this case
+      { index: true, element: <HomePage /> },
       { path: "products", element: <ProductsPage /> },
       // The colon signals to React Router DOM that this part of the path is dynamic.
       // This means every path of the form /products/... will route to the
