@@ -1,7 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = (props) => {
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate("/products");
+  };
+
   return (
     <>
       <h1>My Home Page</h1>
@@ -18,6 +24,9 @@ const HomePage = (props) => {
          */}
         Go to <Link to="/products">the list of products</Link>.
       </p>
+      <button type="button" onClick={clickHandler}>
+        Navigate to Products
+      </button>
     </>
   );
 };
